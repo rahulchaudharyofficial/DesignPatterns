@@ -10,7 +10,7 @@ public class BinarySearch<T extends Comparable> implements Searchable<T> {
     /**
      * @param input is a sorted list of elements.
      * @param item
-     * @return
+     * @return SearchResultModel
      */
     @Override
     public SearchResultModel<T> search(List<T> input, T item) {
