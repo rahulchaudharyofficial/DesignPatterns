@@ -15,8 +15,8 @@ public class SentinalSearch<T> implements Searchable<T> {
     }
 
     @Override
-    public SearchResultModel search(List<T> input, T item) {
-        SearchResultModel<T> result = new SearchResultModel<>();
+    public SearchResult<T> search(List<T> input, T item) {
+        SearchResult<T> result = new SearchResult<>();
 
         if(input != null && !input.isEmpty() && item != null) {
             if(validate(item))

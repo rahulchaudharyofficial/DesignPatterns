@@ -1,11 +1,11 @@
 package in.rahulchaudharyofficial.ds.search;
 
-public class SearchResultModel<T> {
+public class SearchResult<T> {
     private ResponseStatus status;
     private T model;
     private int position;
 
-    public SearchResultModel() {
+    public SearchResult() {
         this.status = ResponseStatus.ERROR;
         this.model = null;
         this.position = -1;

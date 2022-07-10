@@ -5,8 +5,8 @@ import java.util.List;
 public class ListSearch<T> implements Searchable<T> {
 
     @Override
-    public SearchResultModel<T> search(List<T> input, T item) {
-        SearchResultModel<T> model = new SearchResultModel<>();
+    public SearchResult<T> search(List<T> input, T item) {
+        SearchResult<T> model = new SearchResult<>();
         Boolean isFound = Boolean.FALSE;
         int pos = -1;
         if(input != null && !input.isEmpty() && item != null)
