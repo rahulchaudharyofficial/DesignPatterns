@@ -78,5 +78,4 @@ class ProbabilitySearchTest {
         SearchResult<Student> s = algo.search(students, item);
         assertNotNull(s);
     }
-
 }
