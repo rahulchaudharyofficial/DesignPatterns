@@ -16,7 +16,7 @@ public class Utils<T> {
 	public boolean doesImplementEquals(T item) {
         boolean isValid = false;
         for(Method m : item.getClass().getDeclaredMethods()) {
-            if(m.getName()=="equals")
+            if(m.getName().equalsIgnoreCase("equals"))
                 isValid = true;
         }
         return isValid;
