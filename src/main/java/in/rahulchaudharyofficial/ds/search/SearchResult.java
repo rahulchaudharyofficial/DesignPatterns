@@ -1,12 +1,12 @@
 package in.rahulchaudharyofficial.ds.search;
 
 public class SearchResult<T> {
-    private ResponseStatus status;
+    private SearchStatus status;
     private T model;
     private int position;
 
     public SearchResult() {
-        this.status = ResponseStatus.ERROR;
+        this.status = SearchStatus.ERROR;
         this.model = null;
         this.position = -1;
     }
@@ -27,7 +27,7 @@ public class SearchResult<T> {
         this.position = position;
     }
 
-    public ResponseStatus getStatus() {
+    public SearchStatus getStatus() {
         return status;
     }
 
@@ -40,7 +40,7 @@ public class SearchResult<T> {
                 '}';
     }
 
-    public void setStatus(ResponseStatus status) {
+    public void setStatus(SearchStatus status) {
         this.status = status;
     }
 }

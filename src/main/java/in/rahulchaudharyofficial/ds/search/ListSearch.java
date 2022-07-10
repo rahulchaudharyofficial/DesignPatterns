@@ -23,7 +23,7 @@ public class ListSearch<T> implements Searchable<T> {
                 }
             }
         }
-        model.setStatus(isFound?ResponseStatus.SUCCESS:ResponseStatus.ERROR);
+        model.setStatus(isFound?SearchStatus.SUCCESS:SearchStatus.ERROR);
         model.setPosition(isFound?pos: -1);
         model.setModel(isFound?input.get(pos):null);
         return model;

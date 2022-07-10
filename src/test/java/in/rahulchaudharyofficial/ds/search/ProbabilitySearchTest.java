@@ -1,21 +1,30 @@
+/**
+ * 
+ */
 package in.rahulchaudharyofficial.ds.search;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+/**
+ * @author rahul
+ *
+ */
+class ProbabilitySearchTest {
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class BinarySearchTest {
-
-    @Test
+	/**
+	 * Test method for {@link in.rahulchaudharyofficial.ds.search.ProbabilitySearch#search(java.util.List, java.lang.Object)}.
+	 */
+	@Test
     @DisplayName("ListSearch.search : Test search result model not null")
     void search_result_not_null() {
-        Searchable<Integer> s = new BinarySearch<>();
+        Searchable<Integer> s = new ProbabilitySearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,11);
         assertNotNull(model);
@@ -24,7 +33,7 @@ class BinarySearchTest {
     @Test
     @DisplayName("ListSearch.search : Test search result do not found")
     void search_result_match_error() {
-        Searchable<Integer> s = new BinarySearch<>();
+        Searchable<Integer> s = new ProbabilitySearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,11);
         assertTrue(model.getStatus() == SearchStatus.ERROR);
@@ -34,7 +43,7 @@ class BinarySearchTest {
     @Test
     @DisplayName("ListSearch.search : Test search result is found")
     void search_result_match_success() {
-        Searchable<Integer> s = new ListSearch<>();
+        Searchable<Integer> s = new ProbabilitySearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,5);
         assertTrue(model.getStatus() == SearchStatus.SUCCESS);
@@ -44,40 +53,30 @@ class BinarySearchTest {
 
     @Test
     void searchWithComplexObject() {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student(10,"Sarita",40));
+        List<Student> students = new ArrayList<> ();
         students.add(new Student(1,"Rahul Chaudhary",40));
         students.add(new Student(2,"Ruby Gupta",40));
-        students.add(new Student(3,"Devika Srivastava",40));
-        students.add(new Student(4,"Aman Gupta",40));
-
-        Collections.sort(students);
 
         Student item = new Student(2,"Ruby Gupta",40);
 
-        Searchable<Student> s = new BinarySearch<>();
+        Searchable<Student> s = new ProbabilitySearch<>();
         SearchResult<Student> model = s.search(students, item);
         assertTrue(model.getStatus() == SearchStatus.SUCCESS);
         assertTrue(model.getPosition() == 1);
-        assert(item.compareTo(model.getModel()) == 0);
     }
 
     @Test
-    void searchWithNonComparableEntity() {
-        List<Person> personList = new ArrayList<>();
-        personList.add(new Person(10,"Sarita",40));
-        personList.add(new Person(1,"Rahul Chaudhary", 10));
-        personList.add(new Person(2,"Ruby Gupta",40));
-        personList.add(new Person(3,"Devika Srivastava",40));
-        personList.add(new Person(4,"Aman Gupta",40));
+    void search() {
+        Searchable<Student> algo = new ProbabilitySearch<>();
 
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(1,"Rahul Chaudhary",40));
+        students.add(new Student(2,"Ruby Gupta",40));
 
-        Person item = new Person(2,"Ruby Gupta",40);
+        Student item = new Student(2,"Ruby Gupta",40);
 
-        Searchable<Person> search = new ListSearch<>();
-
-        SearchResult<Person> result = search.search(personList, item);
-
-        assertTrue(result.getStatus() == SearchStatus.SUCCESS);
+        SearchResult<Student> s = algo.search(students, item);
+        assertNotNull(s);
     }
+
 }

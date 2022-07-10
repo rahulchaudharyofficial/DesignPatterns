@@ -27,7 +27,7 @@ public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
             else {
                 result.setPosition(mid);
                 result.setModel(input.get(mid));
-                result.setStatus(ResponseStatus.SUCCESS);
+                result.setStatus(SearchStatus.SUCCESS);
             }
         }
         return result;
