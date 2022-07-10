@@ -5,6 +5,8 @@ package in.rahulchaudharyofficial.ds.search;
 
 import java.util.List;
 
+import in.rahulchaudharyofficial.utils.Utils;
+
 /**
  * @author rahul
  *
@@ -22,7 +24,8 @@ public class ProbabilitySearch<T> implements Searchable<T> {
 	@Override
 	public SearchResult<T> search(List<T> input, T item) {
 		SearchResult<T> result = new SearchResult<>();
-		if(input.contains(item))
+		Utils<T> utils = new Utils<>();
+		if(utils.doesImplementEquals(item) && input.contains(item))
 		{
 			int index = input.indexOf(item);
 			result.setModel(input.get(index));
