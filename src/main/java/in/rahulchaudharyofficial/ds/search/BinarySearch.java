@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * @param <T>
  */
-public class BinarySearch<T extends Comparable> implements Searchable<T> {
+public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
 
     /**
      * @param input is a sorted list of elements.

@@ -2,7 +2,7 @@ package in.rahulchaudharyofficial.ds.search;
 
 import java.util.Objects;
 
-public class Student implements Comparable {
+public class Student implements Comparable<Student> {
     private int rollNumber;
     private String name;
     private int age;
@@ -51,17 +51,6 @@ public class Student implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Student other = (Student) o;
-        if(this.getRollNumber() == other.getRollNumber())
-            return 0;
-        else if(this.getRollNumber() < other.getRollNumber())
-            return -1;
-        else
-            return 1;
-    }
-
-    @Override
     public String toString() {
         return "Student{" +
                 "rollNumber=" + rollNumber +
@@ -69,4 +58,14 @@ public class Student implements Comparable {
                 ", age=" + age +
                 '}';
     }
+
+	@Override
+	public int compareTo(Student o) {
+		if(this.getRollNumber() == o.getRollNumber())
+            return 0;
+        else if(this.getRollNumber() < o.getRollNumber())
+            return -1;
+        else
+            return 1;
+	}
 }
