@@ -27,7 +27,7 @@ class BinarySearchTest {
         Searchable<Integer> s = new BinarySearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,11);
-        assertTrue(model.getStatus() == ResponseStatus.ERROR);
+        assertTrue(model.getStatus() == SearchStatus.ERROR);
         assertTrue(model.getPosition() == -1);
     }
 
@@ -37,7 +37,7 @@ class BinarySearchTest {
         Searchable<Integer> s = new ListSearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,5);
-        assertTrue(model.getStatus() == ResponseStatus.SUCCESS);
+        assertTrue(model.getStatus() == SearchStatus.SUCCESS);
         assertTrue(model.getPosition() == 4);
     }
 
@@ -57,7 +57,7 @@ class BinarySearchTest {
 
         Searchable<Student> s = new BinarySearch<>();
         SearchResult<Student> model = s.search(students, item);
-        assertTrue(model.getStatus() == ResponseStatus.SUCCESS);
+        assertTrue(model.getStatus() == SearchStatus.SUCCESS);
         assertTrue(model.getPosition() == 1);
         assert(item.compareTo(model.getModel()) == 0);
     }
@@ -78,6 +78,6 @@ class BinarySearchTest {
 
         SearchResult<Person> result = search.search(personList, item);
 
-        assertTrue(result.getStatus() == ResponseStatus.SUCCESS);
+        assertTrue(result.getStatus() == SearchStatus.SUCCESS);
     }
 }

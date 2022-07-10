@@ -26,7 +26,7 @@ class SentinalSearchTest {
         Searchable<Integer> s = new SentinalSearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,11);
-        assertTrue(model.getStatus() == ResponseStatus.ERROR);
+        assertTrue(model.getStatus() == SearchStatus.ERROR);
         assertTrue(model.getPosition() == -1);
     }
 
@@ -36,7 +36,7 @@ class SentinalSearchTest {
         Searchable<Integer> s = new SentinalSearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
         SearchResult<Integer> model = s.search(input,5);
-        assertTrue(model.getStatus() == ResponseStatus.SUCCESS);
+        assertTrue(model.getStatus() == SearchStatus.SUCCESS);
         assertTrue(model.getPosition() == 4);
     }
 
@@ -51,7 +51,7 @@ class SentinalSearchTest {
 
         Searchable<Student> s = new SentinalSearch<>();
         SearchResult<Student> model = s.search(students, item);
-        assertTrue(model.getStatus() == ResponseStatus.SUCCESS);
+        assertTrue(model.getStatus() == SearchStatus.SUCCESS);
         assertTrue(model.getPosition() == 1);
     }
 

@@ -30,7 +30,7 @@ public class SentinalSearch<T> implements Searchable<T> {
                 {
                     result.setPosition(index);
                     result.setModel(input.get(index));
-                    result.setStatus(ResponseStatus.SUCCESS);
+                    result.setStatus(SearchStatus.SUCCESS);
                 }
             }
             else

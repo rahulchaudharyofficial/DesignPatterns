@@ -1,6 +1,6 @@
 package in.rahulchaudharyofficial.ds.search;
 
-public enum ResponseStatus {
+public enum SearchStatus {
     ERROR,
     SUCCESS
 }

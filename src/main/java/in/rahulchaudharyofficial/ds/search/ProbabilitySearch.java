@@ -21,8 +21,14 @@ public class ProbabilitySearch<T> implements Searchable<T> {
 	
 	@Override
 	public SearchResult<T> search(List<T> input, T item) {
-
-		return null;
+		SearchResult<T> result = new SearchResult<>();
+		if(input.contains(item))
+		{
+			int index = input.indexOf(item);
+			result.setModel(input.get(index));
+			result.setPosition(index);
+			result.setStatus(SearchStatus.SUCCESS);
+		}
+		return result;
 	}
-
 }
