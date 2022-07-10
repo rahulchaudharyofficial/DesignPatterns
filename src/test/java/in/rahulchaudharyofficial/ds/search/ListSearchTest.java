@@ -16,7 +16,7 @@ class ListSearchTest {
     void search_result_not_null() {
         Searchable<Integer> s = new ListSearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
-        SearchResultModel<Integer> model = s.search(input,11);
+        SearchResult<Integer> model = s.search(input,11);
         assertNotNull(model);
     }
 
@@ -25,7 +25,7 @@ class ListSearchTest {
     void search_result_match_error() {
         Searchable<Integer> s = new ListSearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
-        SearchResultModel<Integer> model = s.search(input,11);
+        SearchResult<Integer> model = s.search(input,11);
         assertTrue(model.getStatus() == ResponseStatus.ERROR);
         assertTrue(model.getPosition() == -1);
     }
@@ -35,7 +35,7 @@ class ListSearchTest {
     void search_result_match_success() {
         Searchable<Integer> s = new ListSearch<>();
         List<Integer> input = Arrays.asList(1,2,3,4,5,6,7,8,9);
-        SearchResultModel<Integer> model = s.search(input,5);
+        SearchResult<Integer> model = s.search(input,5);
         assertTrue(model.getStatus() == ResponseStatus.SUCCESS);
         assertTrue(model.getPosition() == 4);
     }
@@ -50,7 +50,7 @@ class ListSearchTest {
         Student item = new Student(2,"Ruby Gupta",40);
 
         Searchable<Student> s = new ListSearch<>();
-        SearchResultModel<Student> model = s.search(students, item);
+        SearchResult<Student> model = s.search(students, item);
         assertTrue(model.getStatus() == ResponseStatus.SUCCESS);
         assertTrue(model.getPosition() == 1);
     }

@@ -13,8 +13,8 @@ public class BinarySearch<T extends Comparable<T>> implements Searchable<T> {
      * @return SearchResultModel
      */
     @Override
-    public SearchResultModel<T> search(List<T> input, T item) {
-        SearchResultModel<T> result = new SearchResultModel<>();
+    public SearchResult<T> search(List<T> input, T item) {
+        SearchResult<T> result = new SearchResult<>();
 
         if(input != null && !input.isEmpty() && item != null) {
             int mid = input.size()/2;
