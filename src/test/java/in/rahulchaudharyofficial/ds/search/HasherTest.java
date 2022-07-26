@@ -20,7 +20,6 @@ class HasherTest {
 	void testHash() {
 		int hash = Hasher.hash("Rahul Chaudhary", 15, 8, 2);
 		assertNotNull(hash);
-		System.out.println("hash = "+ hash);
 	}
 
 }
